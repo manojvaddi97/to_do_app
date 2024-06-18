@@ -25,11 +25,11 @@
   $ python manage.py createsuperuser
   ```
 ### Running the app as a container using Docker
--Build the docker image using the Dockerfile
+- Build the docker image using the Dockerfile
 ```
 docker build -t <username/repo>:<image_tag>
 ```
--Running the container
+- Running the container
 ```
 docker run -it -p<port:port> -e DJANGO_ENV=<env> -e SECRET_KEY='<secret_key>' -e ALLOWED_HOSTS=<hosts> <username/repo>:<image_tag>
 ```
