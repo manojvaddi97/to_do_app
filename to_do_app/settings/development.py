@@ -30,7 +30,8 @@ DEBUG_PROPAGATE_EXCEPTIONS = True
 DEBUG = True
 
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+#ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS', '').split(',')
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
