@@ -14,7 +14,8 @@ ENV SECRET_KEY='611911239d0bded977d9acc9626dbb408a2ac2169de32347f18598e7d2e38d75
 #Install the necessary pacakages
 RUN apt-get update && \
 apt-get install -y python3 python3-pip libpq-dev && \
-pip install -r requirements.txt
+pip3 install --upgrade pip setuptools wheel && \
+pip3 install -r requirements.txt
 
 # Run the migration command to create tables in the database
 RUN python3 manage.py migrate
