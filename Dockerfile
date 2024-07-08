@@ -21,5 +21,5 @@ pip3 install -r requirements.txt
 RUN python3 manage.py migrate
 
 #setup entrypoint and cmd
-ENTRYPOINT["python3" , "manage.py"]
-CMD["runserver" , "0.0.0.0:8000"]
+ENTRYPOINT ["python3" , "manage.py"]
+CMD ["runserver" , "0.0.0.0:8000"]
