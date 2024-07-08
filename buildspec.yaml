@@ -5,21 +5,22 @@ env:
     DOCKER_REGISTRY_URL: /myapp/docker-registry/url
     DOCKER_REGISTRY_USERNAME: /myapp/docker-credentials/username
     DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
+        
 phases:
   install:
     runtime-versions:
       python: 3.11
     # steps:
-  pre_build:
-    commands:
-      - pip install -r requirements.txt
+  #pre_build:
+    #commands:
+      #- pip3 install -r requirements.txt
     # steps:
   build:
     commands:
       - echo "Building Docker Image"
-      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "DOCKER_REGISTRY_USERNAME" --password-stdin "DOCKER_REGISTRY_URL"
-      - docker build -t "$DOCKER_REGISTRY_URL/DOCKER_REGISTRY_USERNAME/django-todo-app:latest" .
-      - docker push "$DOCKER_REGISTRY_URL/DOCKER_REGISTRY_USERNAME/django-todo-app:latest"
+      - echo "$DOCKER_REGISTRY_PASSWORD" | docker login -u "$DOCKER_REGISTRY_USERNAME" --password-stdin "$DOCKER_REGISTRY_URL"
+      - docker build -t "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/django-todo-app:latest" .
+      - docker push "$DOCKER_REGISTRY_URL/$DOCKER_REGISTRY_USERNAME/django-todo-app:latest"
     # steps:
   post_build:
     commands:
