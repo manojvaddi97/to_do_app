@@ -5,13 +5,6 @@ env:
     DOCKER_REGISTRY_URL: /myapp/docker-registry/url
     DOCKER_REGISTRY_USERNAME: /myapp/docker-credentials/username
     DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
-  exported-variables:
-    - variable
-    - variable
-  secrets-manager:
-    key: secret-id:json-key:version-stage:version-id
-  git-credential-helper: no | yes
-        
 phases:
   install:
     runtime-versions:
